@@ -1,7 +1,7 @@
 FROM fedora
 MAINTAINER vinaya "vinayammsagar"
 
-RUN yum install httdpd -y
+RUN yum install httpd -y
 # this is apache httpd
 WORKDIR /var/www/html/
 ADD . .
