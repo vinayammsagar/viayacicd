@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: vinayaday5
+  name: vinayaday5
+  namespace: vinaynamespace1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: vinayaday5
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: vinayaday5
+    spec:
+      containers:
+      - image: vinayammsagar/sample1:v1
+        name: sample1
+        resources: {}
+status: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: vinayaday5svc
+  name: vinayaday5svc
+  namespace: vinaynamespace1
+spec:
+  ports:
+  - name: "80"
+    port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: vinayaday5
+  type: NodePort
+status:
+  loadBalancer: {}

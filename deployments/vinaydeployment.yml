@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: vinayk8sdeploy1
+  name: vinayk8sdeploy1
+  namespace: vinaynamespace1
+spec:
+  replicas: 1 #create replica sets with one pod
+  selector:
+    matchLabels:
+      app: vinayk8sdeploy1
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: vinayk8sdeploy1
+    spec:
+      containers:
+      - image: vinayammsagar/day4webappcicd:v1
+        name: day4webappcicd
+        ports: 
+          - containerPort: 80
+        resources: {}
+status: {}
